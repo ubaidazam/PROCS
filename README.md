@@ -1,6 +1,6 @@
 # PROCS: Uncertainty-Aware Knowledge Graph Embeddings via Conceptual Spaces
 
-Anonymous code and data release for the submission *"PROCS: Uncertainty-Aware Knowledge Graph Embeddings via Conceptual Spaces."*
+Code and data release for the CIKM 2026 paper *"PROCS: Uncertainty-Aware Knowledge Graph Embeddings via Conceptual Spaces."*
 
 PROCS represents entities, relations, and semantic types as Gaussian distributions in a conceptual space, with a multi-faceted geometric scoring function (MGS) and scalable, sampling-free inference. A single notebook (`procs.ipynb`) reproduces the link-prediction, triple-classification, and uncertainty results on all datasets; the dataset is selected via the configuration cell. We also release the build script and canonical split for the Defence-Wikidata knowledge graph.
 
@@ -47,7 +47,25 @@ All three datasets are included under `data/` in the same tab-separated format, 
 
 ## Defence-Wikidata dataset
 
-The Defence-Wikidata knowledge graph contains 68,826 defence-relevant entities and 143,532 triples across 355 relation types, extracted from Wikidata. `wikidata_defense_extraction.ipynb` documents the extraction pipeline; the canonical train/valid/test split used in all reported experiments is provided under `data/defense/`.
+The Defence-Wikidata knowledge graph contains 68,826 entities and 143,377 triples across 355 relation types, extracted from Wikidata. Extraction yields 143,532 raw statements over 41,425 seed entities selected by `instance of` membership in 31 defence classes; retaining every direct statement on a seed entity introduces a further 27,401 entities that appear only as objects, and removing 155 duplicate statements leaves the 143,377 triples reported in the paper. `wikidata_defense_extraction.ipynb` documents the extraction pipeline; the canonical train/valid/test split used in all reported experiments is provided under `data/defense/`.
+
+## Citation
+
+If you use this code or the Defence-Wikidata dataset, please cite:
+
+```bibtex
+@inproceedings{azam2026procs,
+  title     = {PROCS: Uncertainty-Aware Knowledge Graph Embeddings via Conceptual Spaces},
+  author    = {Azam, Ubaid and Razzak, Imran and Schockaert, Steven and Jameel, Shoaib},
+  booktitle = {Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM '26)},
+  year      = {2026},
+  doi       = {10.1145/3799682.3839959}
+}
+```
+
+## Related project
+
+PROCS is part of the wider [PICASO](https://github.com/ubaidazam/PICASO) project on probabilistic conceptual spaces for knowledge graphs.
 
 ## License
 
